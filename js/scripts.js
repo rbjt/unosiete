@@ -1,18 +1,25 @@
-// Seleccionar el formulario
-const contactForm = document.querySelector('.contact-form');
+// Inicializar EmailJS si decides incluir un User ID (opcional, pero no obligatorio)
+// emailjs.init("tu_userID"); // Reemplaza "tu_userID" si decides usar esta función
 
-// Agregar un evento al formulario
-contactForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Evitar que la página se recargue
+// Enviar el mensaje al hacer submit
+const form = document.getElementById("contact-form");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  // Obtener los valores de los campos
-  const name = contactForm.querySelector('input[name="name"]').value;
-  const email = contactForm.querySelector('input[name="email"]').value;
-  const message = contactForm.querySelector('textarea[name="message"]').value;
+  const button = form.querySelector("button");
+  button.textContent = "Sending...";
 
-  // Mostrar un mensaje de confirmación
-  alert(`Thank you, ${name}! Your message has been sent.`);
+  const formData = new FormData(form);
 
-  // Opcional: limpiar el formulario
-  contactForm.reset();
+  emailjs.sendForm("service_04lcj09", "template_c8myjmp", formData)
+    .then(function (response) {
+      alert("Your message has been sent successfully!");
+      form.reset();
+    })
+    .catch(function (error) {
+      alert("There was an error sending your message. Please try again.");
+    })
+    .finally(function () {
+      button.textContent = "Send Message"; // Restablecer texto del botón
+    });
 });
