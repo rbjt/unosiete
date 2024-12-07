@@ -1,25 +1,25 @@
-// Inicializar EmailJS si decides incluir un User ID (opcional, pero no obligatorio)
-// emailjs.init("tu_userID"); // Reemplaza "tu_userID" si decides usar esta función
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
 
-// Enviar el mensaje al hacer submit
-const form = document.getElementById("contact-form");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
-  const button = form.querySelector("button");
-  button.textContent = "Sending...";
+    const button = form.querySelector("button");
+    button.textContent = "Sending...";
 
-  const formData = new FormData(form);
-
-  emailjs.sendForm("service_04lcj09", "template_c8myjmp", formData)
-    .then(function (response) {
-      alert("Your message has been sent successfully!");
-      form.reset();
-    })
-    .catch(function (error) {
-      alert("There was an error sending your message. Please try again.");
-    })
-    .finally(function () {
-      button.textContent = "Send Message"; // Restablecer texto del botón
-    });
+    // Enviar el formulario con EmailJS
+    emailjs
+      .sendForm("service_04lcj09", "template_c8myjmp", form) // Reemplaza con tus IDs
+      .then(function () {
+        alert("Your message has been sent successfully!");
+        form.reset(); // Limpiar formulario después de enviar
+      })
+      .catch(function (error) {
+        console.error("EmailJS Error:", error);
+        alert("There was an error sending your message. Please try again.");
+      })
+      .finally(function () {
+        button.textContent = "Send Message"; // Restablecer texto del botón
+      });
+  });
 });
