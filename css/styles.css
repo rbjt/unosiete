@@ -13,24 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Logo */
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1000; /* Asegura que el logo esté por encima de otros elementos */
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.logo:hover{
-  transform: scale(1.1);
-}
-.logo img {
-  height: 40px; /* Ajusta el tamaño del logo según tus preferencias */
-  display: block;
-}
-
 /* Header (Hero Section) */
 .hero {
   background-color: #f9f9f9;
