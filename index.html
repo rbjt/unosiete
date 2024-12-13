@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uno Siete</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Logo -->
+    <a href="#" class="logo">
+        <img src="img/logo.png" alt="Uno Siete Logo">
+    </a>
+
 
   <!-- Header (Hero Section) -->
   <header class="hero">
@@ -19,10 +25,58 @@
   <section id="work" class="section">
     <h2>Our Work</h2>
     <div class="work-item">
+        <img src="img/project1.jpg" alt="Project 1">
       <h3>Project 1</h3>
       <p>Description of project 1...</p>
     </div>
+      <div class="work-item">
+        <img src="img/project2.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Description of project 2...</p>
+    </div>
+    <div class="work-item">
+        <img src="img/project3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <p>Description of project 3...</p>
+    </div>
+      <div class="work-item">
+          <img src="img/project4.jpg" alt="Project 4">
+          <h3>Project 4</h3>
+          <p>Description of project 4...</p>
+      </div>
   </section>
+
+  <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Custom Web Design</h3>
+                <p>We create personalized websites that reflect your brand's identity and meet your goals.</p>
+            </div>
+            <div class="service-item">
+                <h3>Responsive Design</h3>
+                <p>We ensure that your website looks and functions perfectly on all devices.</p>
+            </div>
+            <div class="service-item">
+                <h3>UI/UX Design</h3>
+                <p>We create intuitive and user-friendly interfaces, focused on the best experience for your users.</p>
+            </div>
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>We implement advanced functionalities and custom web solutions, taking care of every technical detail.</p>
+            </div>
+            <div class="service-item">
+                <h3>SEO</h3>
+                <p>We optimize your website to appear in the top search results on Google.</p>
+            </div>
+            <div class="service-item">
+                <h3>Web Maintenance</h3>
+                <p>We take care of keeping your website updated, secure, and running perfectly.</p>
+            </div>
+        </div>
+    </section>
+
 
   <!-- About Section -->
   <section id="about" class="section">
@@ -35,25 +89,23 @@
     <h2>Contact Us</h2>
     <form id="form" class="contact-form">
       <div class="field">
-        <label for="from_name">Your Name</label>
-        <input type="text" name="from_name" id="from_name" required>
+        <input type="text" name="from_name" id="from_name" placeholder="Name" required>
       </div>
       <div class="field">
-        <label for="message">Message</label>
-        <textarea name="message" id="message" required></textarea>
+        <input type="email" name="reply_to" id="reply_to" placeholder="e-mail" required>
       </div>
       <div class="field">
-        <label for="reply_to">Your Email</label>
-        <input type="email" name="reply_to" id="reply_to" required>
+        <textarea name="message" id="message" placeholder="Message" required></textarea>
       </div>
 
-      <button type="submit" id="button">Send Email</button>
+      <button type="submit" id="button">Send</button>
+      <div class="success-message"></div>
     </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Uno Siete - All rights reserved.</p>
+    <p>© 2024 Uno Siete - All rights reserved.</p>
   </footer>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -64,4 +116,3 @@
   <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
-
